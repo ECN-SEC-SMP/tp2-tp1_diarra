@@ -1,8 +1,8 @@
-# 🧠 TP – Programmation Orientée Objet : Manipulation de fichier en C++
+# TP – Programmation Orientée Objet : Manipulation de fichier en C++
 
 ## 📘 Description du projet
-Ce projet a été réalisé dans le cadre du **TP de Programmation Orientée Objet (POO)**.  
-L’objectif est d’implémenter une classe `   ` permettant de :
+L’objectif de ce TP est d’appliquer les principes de l’héritage multiple et de la création d’ex
+ceptions.
 
 
 ---
@@ -62,7 +62,7 @@ Utiliser **g++** (ou tout compilateur compatible C++17 ou supérieur) :
 ## 📘 Auteurs
 
 ### Noms : Mame Diarra DIOP
-### Filière : SEC;
-### Université : Ecole Centrale de Nantes;
+### Filière : SEC
+### Université : Ecole Centrale de Nantes
 
 📅 TP réalisé le 14 octobre 2025
