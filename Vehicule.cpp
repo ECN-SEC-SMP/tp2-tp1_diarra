@@ -1,4 +1,5 @@
-#include <stdexcept>
+
+#include <stdexcept> //permet de gérer les exceptions
 #include <iostream>
 using namespace std;
 
@@ -47,8 +48,11 @@ using namespace std;
 
 // il faut que l'état passe à marche  avec une vitesse supérieur à 0
     void Vehicule::demarrer(){
-        if (vitesse_ > 0) {
+        if (etat_ != PANNE_SEVERE & etat_ != PANNE_LEGERE) {
             etat_ = MARCHE;
+        }
+        else {
+            throw std::string("Le véhicule est en panne, impossible de demarrer");
         }
     }
 
@@ -62,6 +66,9 @@ using namespace std;
         if (etat_ == PANNE_LEGERE || etat_ == PANNE_SEVERE) {
             etat_ = MARCHE;
         }
+        else {
+            throw std::string("Le véhicule n'est pas en panne, impossible de depanner");
+        }
     }
 
 // Accélérer le véhicule d'un incrément donné en paramètre
@@ -69,10 +76,13 @@ using namespace std;
     void Vehicule::accelerer(int increment){
         if (etat_ == MARCHE) {
             vitesse_ += increment;
-            if (vitesse_ > vitesseMax_) {
-                vitesse_ = vitesseMax_;
-            }
         }
+        if (vitesse_ > vitesseMax_) {
+                throw std::string("Le véhicule n'est pas en marche, impossible d'accelerer");
+            }
+        if (vitesse_ < 0) {
+                throw std::string("La vitesse ne peut pas être négative");
+            }
     }
 
     // Monter des occupants dans le véhicule, i.e. le nombre d'occupants s'incrémente d'autant
@@ -94,7 +104,17 @@ using namespace std;
             nbPlaces_+=nbOcc; //nbPlaces augmente DU MEME NOMBRE
         }
         else{
-            throw runtime_error("Le véhicule est vide, impossible de descendre");
+            throw std::string("Le véhicule est vide, impossible de descendre");
         }
     }
 
+// opérateur d'affichage du contenu global de ma classe
+ostream& operator<<(ostream& s,Vehicule const& v) {
+    s << "Vitesse: " << v.getVitesse() << ", Vitesse Max: " << v.getVitesseMax()
+      << ", Nombre de Places: " << v.getNbPlaces() << ", Occupants: " << v.getOccupants()
+      << ", Etat: " << v.getEtat();
+    return s;
+}
+
+// Deuxième partie: Voiture et Bateau
+//  Bateau.cpp
