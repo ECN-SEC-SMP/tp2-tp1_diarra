@@ -11,7 +11,7 @@ using namespace std;
     Vehicule::Vehicule(int vitesseMax, int nbPlaces, int occupants) {
         // Valeurs par défaut
         vitesseMax_ = 0;
-        nbPlaces_ = 1;
+        nbPlaces_ = 4; // par défaut 4 places
         occupants_ = 0;
         etat_ = ARRET;
     }
@@ -50,6 +50,7 @@ using namespace std;
     void Vehicule::demarrer(){
         if (etat_ != PANNE_SEVERE & etat_ != PANNE_LEGERE) {
             etat_ = MARCHE;
+            vitesse_ = 5; // un véhicule démarre toujours à 5 km/h
         }
         else {
             throw std::string("Le véhicule est en panne, impossible de demarrer");

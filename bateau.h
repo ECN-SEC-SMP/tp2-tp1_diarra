@@ -3,14 +3,16 @@
 using namespace std;
 #include "Vehicule.hpp"
 
-// sous-classe Voiture
-class Voiture : public Vehicule {
+// sous-classe Bateau
+class Bateau : public Vehicule {
 public:
     //la classe fille hérite de toutes les méthodes et attributs de la classe mère
     //mais redéfinit les méthodes demarrer et arreter
     //seul le constructeur diffère dans la façon de l'appeler
-    Voiture(int vitesseMax, int nbPlaces, int occupants);
+    Bateau(int vitesseMax, int nbPlaces, int occupants);
     // redéfinition des méthodes
     void demarrer();
     void arreter();
+
 };
+//Note: pour exécuter le main, il faut inclure la classe mère et le main
