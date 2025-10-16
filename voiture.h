@@ -3,6 +3,8 @@
 using namespace std;
 #include "Vehicule.hpp"
 
-
-// Sous classe Bateau 
-class Bateau : public Vehicule {};
+// // sous-classe Voiture
+// class Voiture : public Vehicule {
+// public:
+//     Voiture():Vehicule
+// };
