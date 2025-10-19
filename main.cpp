@@ -1,6 +1,7 @@
-#include "Vehicule.hpp"
+// #include "Vehicule.hpp"
 #include "voiture.h"
 #include "bateau.h"
+#include "voiture_amphibe.h"
 
 int main()
 {
@@ -98,5 +99,9 @@ int main()
     cout << "Occupants: " << Bateau.getOccupants() << endl;
     cout << "Etat: " << Bateau.getEtat() << endl;
 
+    cout << "----------------------------------------" << endl;
+    //test de l'heritage multiple
+    VoitureAmphibe voitureAmphibe();
+    cout << voitureAmphibe << endl;
     return 0;
 }
