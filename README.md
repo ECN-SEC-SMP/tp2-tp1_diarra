@@ -53,7 +53,9 @@ g++ vehicule.cpp voiture.cpp bateau.cpp voiture_amphibe.cpp -o monprog
 ./monprog
 ```
 ### Makefile
-
+```bash
+make
+```
 
 
 ## 📘 Auteur
